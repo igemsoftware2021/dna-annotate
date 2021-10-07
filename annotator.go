@@ -41,7 +41,7 @@ func Execute() {
 func init() {
 	rootCmd.PersistentFlags().StringVarP(&input, "input", "i", "", "Directory where all the input genbank files will be read")
 	rootCmd.PersistentFlags().StringVarP(&output, "ouput", "o", "", "Directory where all the output genbank files wil be written")
-	rootCmd.PersistentFlags().StringVarP(&output, "pattern", "p", "", "Regex to selective filter specific files in the input folder")
+	rootCmd.PersistentFlags().StringVarP(&pattern, "pattern", "p", "", "Regex to selective filter specific files in the input folder")
 
 
 	rootCmd.MarkFlagRequired("input")
@@ -57,7 +57,10 @@ func Script(input string, pattern string) {
  
     for _, f := range files {
 		var validID = regexp.MustCompile(pattern)
-			fmt.Println(f.Name(), validID.MatchString(f.Name()))
+		if validID.MatchString(f.Name()) {
+			fmt.Println(f.Name())
+		}
+		
     }
 }
 
