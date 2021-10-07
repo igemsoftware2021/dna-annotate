@@ -1,0 +1,22 @@
+
+name: annotator
+description: A Github action to annotate problematic sequences from given Genbank file.
+inputs:
+    inputDir:  # id of input
+        description: 'Directory with all genbank to be read and annotated'
+        required: true
+        default: 'Input'
+outputs:
+    ouputDir: # id of output
+        description: 'Directory where all genbank annotated will be written'
+        required: true
+        default: 'Output'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs.inputDir outputs.ouputDir }}
+author: Friendzymes Team
+branding:
+      icon: 'layers'
+      color: 'purple'
