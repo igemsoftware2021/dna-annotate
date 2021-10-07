@@ -1,1 +1,1 @@
-echo "annotator -h"
+echo "main -h"
