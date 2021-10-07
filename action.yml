@@ -14,8 +14,8 @@ runs:
     using: 'docker'
     image: 'Dockerfile'
     args:
-        - ${{ inputs.inputDir }} ${{ inputs.outputDir }})
-        
+        - ${{ inputs.inputDir }} ${{ inputs.outputDir }}
+
 author: Friendzymes Team
 branding:
       icon: 'layers'
