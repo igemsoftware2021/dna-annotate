@@ -6,6 +6,10 @@ inputs:
         description: 'Directory with all genbank to be read and annotated'
         required: true
         default: 'input'
+    pattern:
+        description: 'User-specified pattern to select specific files from the input directory'
+        required: true
+        default: '/*.*\.(gb?k)$/i'
     outputDir:
         description: 'Directory where all genbank annotated will be written'
         required: true
@@ -16,6 +20,7 @@ runs:
     args:
         - ${{ inputs.inputDir }}
         - ${{ inputs.outputDir }}
+        - ${{ inputs.pattern }}
 
 author: Friendzymes Team
 branding:
