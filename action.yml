@@ -1,5 +1,5 @@
 
-name: annotator
+name: dna-annotator
 description: A Github action to annotate problematic sequences from given Genbank file.
 inputs:
     inputDir:  # id of input
