@@ -9,7 +9,7 @@ inputs:
     pattern:
         description: 'User-specified pattern to select specific files from the input directory'
         required: true
-        default: '/*.*\.(gb?k)$/i'
+        default: '.*\.\(gb\|gbk\)'
     outputDir:
         description: 'Directory where all genbank annotated will be written'
         required: true
