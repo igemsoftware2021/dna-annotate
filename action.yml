@@ -5,17 +5,16 @@ inputs:
     inputDir:  # id of input
         description: 'Directory with all genbank to be read and annotated'
         required: true
-        default: 'Input'
-outputs:
-    ouputDir: # id of output
+        default: 'input'
+    outputDir:
         description: 'Directory where all genbank annotated will be written'
         required: true
-        default: 'Output'
+        default: 'output'
 runs:
     using: 'docker'
     image: 'Dockerfile'
     args:
-        - ${{ inputs.inputDir outputs.ouputDir }}
+        - format('{{{0} {1}}}', ${{ inputs.inputDir }}, ${{ inputs.outputDir }})
 author: Friendzymes Team
 branding:
       icon: 'layers'
