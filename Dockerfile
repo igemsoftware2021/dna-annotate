@@ -1,13 +1,28 @@
-FROM golang:1.12.0-alpine3.9
+# syntax=docker/dockerfile:1
 
-ENV GOPROXY=https://proxy.golang.org
-RUN apk add --no-cache git
+##
+## Build
+##
+FROM golang:1.16-buster AS build
+
 WORKDIR /app
+
 COPY go.mod ./
 COPY go.sum ./
 RUN go mod download
+
 COPY *.go ./
-COPY entrypoint.sh /entrypoint.sh
+
 RUN go build -o /annotator
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+
+##
+## Deploy
+##
+FROM gcr.io/distroless/base-debian10
+
+WORKDIR /
+
+COPY --from=build /annotator /annotator
+
+
+ENTRYPOINT ["/annotator"]
