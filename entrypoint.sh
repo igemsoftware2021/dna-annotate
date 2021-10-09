@@ -1,3 +1,2 @@
 #!/bin/sh -l
-ls
-echo $1 $2 $3
+eval "/annotator -i $1 -o $2 -p '$3'"
