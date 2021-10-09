@@ -1,5 +1,6 @@
 FROM golang:1.12.0-alpine3.9
 
+ENV GOPROXY=https://proxy.golang.org
 RUN apk add --no-cache git
 WORKDIR /app
 COPY go.mod ./
