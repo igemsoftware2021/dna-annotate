@@ -18,9 +18,9 @@ runs:
     using: 'docker'
     image: 'Dockerfile'
     args:
-        - -i ${{ inputs.inputDir }}
-        - -o ${{ inputs.outputDir }}
-        - -p ${{ inputs.pattern }}
+        - /github/workspace/${{ inputs.inputDir }}
+        - /github/workspace/${{ inputs.outputDir }}
+        - ${{ inputs.pattern }}
 
 author: Friendzymes Team
 branding:
