@@ -1,0 +1,10 @@
+name: main 
+on:
+  push:
+  
+jobs: 
+  test: 
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions/checkout@v2
+    - uses: Open-Science-Global/annotator@v0.4.3
