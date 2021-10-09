@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - uses: actions/checkout@v2
-    - uses: Open-Science-Global/annotator@v0.4.5
+    - uses: Open-Science-Global/annotator@v0.4.6
