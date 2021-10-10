@@ -57,13 +57,15 @@ func init() {
 }
 
 func Script(inputDir string, outputDir string, pattern string) {
-	fmt.Println("Hello World")
+	fmt.Println("Start line 60")
 	filesPath := getListFilesByPattern(inputDir, pattern)
-
+	fmt.Println("Start line 62 with filesPath", filesPath)
 	for _, filePath := range filesPath {
+		fmt.Println("Start line 64")
 		sequence := genbank.Read(filePath)
 		annotator(sequence, filePath, outputDir)
 	} 
+	fmt.Println("Start line 68")
 }
 
 func annotator(sequence poly.Sequence, filePath string, outputDir string) {
