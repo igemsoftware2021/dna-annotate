@@ -10,5 +10,5 @@ jobs:
       options: --user 1001
     steps: 
     - uses: actions/checkout@v2
-    - uses: Open-Science-Global/annotator@v0.5.4
+    - uses: Open-Science-Global/annotator@v0.5.5
     - run: find | sed 's|[^/]*/|- |g'
