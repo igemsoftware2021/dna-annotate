@@ -1,0 +1,44 @@
+LOCUS       anti-his-tag-antibody    845 bp ds-DNA     linear       02-OCT-2021
+DEFINITION  .
+ACCESSION   anti-his-tag                                                       
+VERSION     anti-his-tag.1                                                     
+SOURCE      synthetic DNA construct                                            
+  ORGANISM  synthetic DNA construct                                            
+FEATURES             Location/Qualifiers
+     protein_bind    16..21
+                     /label="BbsI"
+     protein_bind    24..27
+                     /label="BbsI"
+     protein_bind    37..42
+                     /label="BsaI"
+     protein_bind    44..47
+                     /label="BsaI"
+     CDS             45..800
+                     /label="anti-his-tag-antibody"
+     exon            45..800
+                     /label="Translation 45-800"
+     protein_bind    complement(801..804)
+                     /label="BsaI"
+     protein_bind    complement(806..811)
+                     /label="BsaI"
+     protein_bind    complement(819..822)
+                     /label="BbsI"
+     protein_bind    complement(825..830)
+                     /label="BbsI"
+ORIGIN
+        1 tagtatgttg acccgGAAGA CagGGAGttg cgtgttggtc tccaATGGAT TATAAGGACA
+       61 TCTTGATGAC TCAAACGCCA TCCTCTCTTC CAGTCTCTCT AGGTGATCAA GCCTCCATCA
+      121 GTTGCAGAAG TTCTCAATCA ATAGTTCATA GTAATGGAAA CACCTATCTT GAGTGGTATT
+      181 TACAAAAGCC AGGACAGAGT CCTAAACTTC TTATTTATAA GGTTAGTAAT AGATTTAGCG
+      241 GTGTTCCTGA TAGGTTCTCA GGTAGCGGAT CTGGAACCGA CTTTACTTTA AAAATAAGCC
+      301 GAGTAGAAGC CGAAGATTTG GGTGTCTACT ATTGTTTTCA AGGTAGTCAT GTTCCTTTTA
+      361 CTTTTGGCTC CGGCACGAAA CTAGAAATTA AACGTGGCGG AGGTGGTAGC GGTGGCGGTG
+      421 GATCAGGTGG AGGAGGTTCA GGAGGAGGAG GCTCTCAGGT GCAACTTCAA CAGTCCGGAC
+      481 CAGAGGATGT TAAGCCAGGA GCTTCTGTGA AGATATCTTG CAAGGCTTCC GGTTACACTT
+      541 TTACAGATTA CTATATGAAC TGGGTAAAGC AATCACCAGG AAAGGGTTTG GAATGGATCG
+      601 GCGATATTAA TCCGAACAAT GGGGGAACCT CCTACAACCA AAAGTTTAAG GGACGTGCTA
+      661 CATTGACAGT CGATAAGAGT TCATCCACGG CTTACATGGA ATTGCGTTCT CTAACTTCTG
+      721 AGGACAGTAG CGTGTATTAT TGCGAATCAC AATCAGGTGC ATACTGGGGA CAGGGTACAA
+      781 CAGTTACCGT TTCAGCTtag GCTTcGAGAC CtgtattaCG CTagGTCTTC catgtgggta
+      841 gagac
+//
