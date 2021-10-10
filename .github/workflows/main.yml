@@ -11,4 +11,7 @@ jobs:
     steps: 
     - uses: actions/checkout@v2
     - uses: Open-Science-Global/annotator@v0.6.1
-    - run: find | sed 's|[^/]*/|- |g'
+    - uses: actions/upload-artifact@v2
+      with:
+        name: annotated-sequences
+        path: output/
