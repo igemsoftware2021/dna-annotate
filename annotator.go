@@ -57,7 +57,7 @@ func init() {
 }
 
 func Script(inputDir string, outputDir string, pattern string) {
-	fmt.Println("Start line 60")
+	fmt.Println("Start line 60", pattern)
 	filesPath := getListFilesByPattern(inputDir, pattern)
 	fmt.Println("Start line 62 with filesPath", filesPath)
 	for _, filePath := range filesPath {
@@ -79,14 +79,16 @@ func annotator(sequence poly.Sequence, filePath string, outputDir string) {
 
 func getListFilesByPattern(inputDir string, pattern string) []string {
 	files, err := ioutil.ReadDir(inputDir)
-	
+	fmt.Println("Start line 82", files)
 	if err != nil {
         log.Fatal(err)
     }
 	var filesPath []string
     for _, f := range files {
+		fmt.Println("Start line 88", f)
 		var validFile = regexp.MustCompile(pattern)
 		if validFile.MatchString(f.Name()) {
+			fmt.Println("Start line 91", f)
 			file := inputDir + "/" + f.Name()
 			filesPath = append(filesPath, file)
 		}
