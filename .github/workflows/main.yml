@@ -8,4 +8,4 @@ jobs:
     steps: 
     - uses: actions/checkout@v2
     - uses: Open-Science-Global/annotator@v0.4.9
-    - run: ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+    - run: find | sed 's|[^/]*/|- |g'
