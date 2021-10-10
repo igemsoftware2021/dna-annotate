@@ -18,8 +18,8 @@ runs:
     using: 'docker'
     image: 'Dockerfile'
     args:
-        - github/workspace/${{ inputs.inputDir }}
-        - github/workspace/${{ inputs.outputDir }}
+        - ${{ inputs.inputDir }}
+        - ${{ inputs.outputDir }}
         - ${{ inputs.pattern }}
 
 author: Friendzymes Team
