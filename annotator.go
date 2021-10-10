@@ -16,6 +16,7 @@ import (
 	"github.com/Open-Science-Global/poly/finder"
 	"github.com/Open-Science-Global/poly/transform"
 	"github.com/Open-Science-Global/poly"
+	"github.com/sethvargo/go-githubactions"
 )
 
 func main() {
@@ -70,7 +71,8 @@ func annotator(sequence poly.Sequence, filePath string, outputDir string) {
 	outputPath := outputDir + "/" + outputFile
 	
 	annotatedSequence := findProblematicSequences(sequence)
-	fmt.Println(annotatedSequence, outputPath)
+	str := fmt.Sprintf("%v", annotatedSequence)
+	githubactions.Infof(str)
 	genbank.Write(annotatedSequence, outputPath)
 }
 
