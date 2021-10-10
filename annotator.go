@@ -57,6 +57,7 @@ func init() {
 }
 
 func Script(inputDir string, outputDir string, pattern string) {
+	fmt.Println("Hello World")
 	filesPath := getListFilesByPattern(inputDir, pattern)
 
 	for _, filePath := range filesPath {
@@ -70,7 +71,7 @@ func annotator(sequence poly.Sequence, filePath string, outputDir string) {
 	outputPath := outputDir + "/" + outputFile
 	
 	annotatedSequence := findProblematicSequences(sequence)
-	log.Fatal(annotatedSequence)
+	fmt.Println(annotatedSequence)
 	genbank.Write(annotatedSequence, outputPath)
 }
 

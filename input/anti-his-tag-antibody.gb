@@ -1,9 +1,10 @@
-LOCUS       anti-his-tag-antibody    845 bp ds-DNA     linear       02-OCT-2021
+LOCUS       anti-his-tag-antibody     845 bp     DNA     linear          02-OCT-2021
 DEFINITION  .
-ACCESSION   anti-his-tag                                                       
-VERSION     anti-his-tag.1                                                     
-SOURCE      synthetic DNA construct                                            
-  ORGANISM  synthetic DNA construct                                            
+ACCESSION   anti-his-tag
+VERSION     anti-his-tag.1
+KEYWORDS    
+SOURCE      synthetic DNA construct
+  ORGANISM  synthetic DNA construct
 FEATURES             Location/Qualifiers
      protein_bind    16..21
                      /label="BbsI"
