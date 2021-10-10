@@ -71,8 +71,7 @@ func annotator(sequence poly.Sequence, filePath string, outputDir string) {
 	outputPath := outputDir + "/" + outputFile
 	
 	annotatedSequence := findProblematicSequences(sequence)
-	str := fmt.Sprintf("%v", annotatedSequence)
-	githubactions.Infof(str)
+	log.Fatal(annotatedSequence)
 	genbank.Write(annotatedSequence, outputPath)
 }
 
