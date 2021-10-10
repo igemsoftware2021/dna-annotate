@@ -21,6 +21,12 @@ runs:
         - ${{ inputs.inputDir }}
         - ${{ inputs.outputDir }}
         - ${{ inputs.pattern }}
+    steps:
+        - uses: actions/upload-artifact@v2
+          with:
+            name: annotated-sequences
+            path: ${{inputs.outputDir}}/
+            if-no-files-found: error
 
 author: Friendzymes Team
 branding:
