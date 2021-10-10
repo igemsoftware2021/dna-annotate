@@ -16,7 +16,6 @@ import (
 	"github.com/Open-Science-Global/poly/finder"
 	"github.com/Open-Science-Global/poly/transform"
 	"github.com/Open-Science-Global/poly"
-	"github.com/sethvargo/go-githubactions"
 )
 
 func main() {
