@@ -57,38 +57,34 @@ func init() {
 }
 
 func Script(inputDir string, outputDir string, pattern string) {
-	fmt.Println("Start line 60", pattern)
 	filesPath := getListFilesByPattern(inputDir, pattern)
-	fmt.Println("Start line 62 with filesPath", filesPath)
 	for _, filePath := range filesPath {
-		fmt.Println("Start line 64")
 		sequence := genbank.Read(filePath)
 		annotator(sequence, filePath, outputDir)
 	} 
-	fmt.Println("Start line 68")
 }
 
 func annotator(sequence poly.Sequence, filePath string, outputDir string) {
 	outputFile := filepath.Base(filePath)
 	outputPath := outputDir + "/" + outputFile
 	
+	if _, err := os.Stat(outputPath); os.IsNotExist(err) {
+		os.Mkdir(outputDir, 0755)
+	}
+	
 	annotatedSequence := findProblematicSequences(sequence)
-	fmt.Println(annotatedSequence)
 	genbank.Write(annotatedSequence, outputPath)
 }
 
 func getListFilesByPattern(inputDir string, pattern string) []string {
 	files, err := ioutil.ReadDir(inputDir)
-	fmt.Println("Start line 82", files)
 	if err != nil {
         log.Fatal(err)
     }
 	var filesPath []string
     for _, f := range files {
-		fmt.Println("Start line 88", f)
 		var validFile = regexp.MustCompile(pattern)
 		if validFile.MatchString(f.Name()) {
-			fmt.Println("Start line 91", f)
 			file := inputDir + "/" + f.Name()
 			filesPath = append(filesPath, file)
 		}
