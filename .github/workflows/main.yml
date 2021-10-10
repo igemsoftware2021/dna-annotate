@@ -10,7 +10,7 @@ jobs:
       options: --user 1001
     steps: 
     - uses: actions/checkout@v2
-    - uses: Open-Science-Global/annotator@v0.5.8
+    - uses: Open-Science-Global/annotator@v0.5.9
     - run: find | sed 's|[^/]*/|- |g'
     - uses: actions/upload-artifact@v2
       with:
