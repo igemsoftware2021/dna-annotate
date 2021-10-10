@@ -67,7 +67,7 @@ func Script(inputDir string, outputDir string, pattern string) {
 
 func annotator(sequence poly.Sequence, filePath string, outputDir string) {
 	outputFile := filepath.Base(filePath)
-	outputPath :=  "/" + outputDir + "/" + outputFile
+	outputPath := outputDir + "/" + outputFile
 	
 	annotatedSequence := findProblematicSequences(sequence)
 	
@@ -75,20 +75,19 @@ func annotator(sequence poly.Sequence, filePath string, outputDir string) {
 }
 
 func getListFilesByPattern(inputDir string, pattern string) []string {
-	directory := "/" + inputDir
-	files, err := ioutil.ReadDir(directory)
-    if err != nil {
+	files, err := ioutil.ReadDir(inputDir)
+	
+	if err != nil {
         log.Fatal(err)
     }
 	var filesPath []string
     for _, f := range files {
 		var validFile = regexp.MustCompile(pattern)
 		if validFile.MatchString(f.Name()) {
-			file := directory + "/" + f.Name()
+			file := inputDir + "/" + f.Name()
 			filesPath = append(filesPath, file)
 		}
     }
-
 	return filesPath
 }
 
