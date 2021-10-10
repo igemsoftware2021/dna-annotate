@@ -70,7 +70,7 @@ func annotator(sequence poly.Sequence, filePath string, outputDir string) {
 	outputPath := outputDir + "/" + outputFile
 	
 	annotatedSequence := findProblematicSequences(sequence)
-	
+	fmt.Println(annotatedSequence, outputPath)
 	genbank.Write(annotatedSequence, outputPath)
 }
 
