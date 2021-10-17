@@ -6,7 +6,7 @@ COPY go.mod ./
 COPY go.sum ./
 RUN go mod download
 COPY *.go ./
-RUN go build -o /annotator
+RUN go build -o /dna-annotate
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

@@ -1,16 +1,16 @@
 
-name: dna-annotator
+name: dna-annotate
 description: A Github action to annotate problematic sequences from given Genbank file.
 inputs:
-    inputDir:  # id of input
+    input-dir:  # id of input
         description: 'Directory with all genbank to be read and annotated'
         required: true
         default: 'input'
-    pattern:
+    input-pattern:
         description: 'User-specified pattern to select specific files from the input directory'
         required: true
         default: '.*\.\(gb\|gbk\)'
-    outputDir:
+    output-dir:
         description: 'Directory where all genbank annotated will be written'
         required: true
         default: 'output'
@@ -18,11 +18,10 @@ runs:
     using: 'docker'
     image: 'Dockerfile'
     args:
-        - ${{ inputs.inputDir }}
-        - ${{ inputs.outputDir }}
-        - ${{ inputs.pattern }}
-
+        - ${{ inputs.input-dir     }}
+        - ${{ inputs.output-dir    }}
+        - ${{ inputs.input-pattern }}
 author: Friendzymes Team
 branding:
-      icon: 'layers'
-      color: 'purple'
+    icon:  'layers'
+    color: 'purple'

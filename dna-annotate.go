@@ -1,10 +1,9 @@
 package main
 
-
 import (
 	"fmt"
 	"io/ioutil"
-    "log"
+	"log"
 	"regexp"
 	"os"
 	"strings"
@@ -30,9 +29,9 @@ var (
 
 
 var rootCmd = &cobra.Command{
-	Use:   "annotator",
-	Short: "Annotator is github action to annotate problematic sequences from given Genbank file.",
-	Long: `Annotator is github action to annotate problematic sequences from given Genbank file.`,
+	Use:   "dna-annotate",
+	Short: "dna-annotate is github action to annotate problematic sequences from given Genbank file.",
+	Long: `dna-annotate is github action to annotate problematic sequences from given Genbank file.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		Script(input, output, pattern)
 	},

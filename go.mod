@@ -1,4 +1,4 @@
-module github.com/Open-Science-Global/annotator
+module github.com/Open-Science-Global/dna-annotate
 
 go 1.17
 
