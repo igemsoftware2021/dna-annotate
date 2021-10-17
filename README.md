@@ -1,4 +1,9 @@
-`banner`
+<p align="center">
+  <br>
+  <img src="https://cdn.discordapp.com/attachments/862687453516660746/892128174408892447/friendzymes_freddy_square.png" width="150" />
+  <!-- <img src="friendzymes-blah.png" width="150"/> -->
+  <br>
+</p>
 
 # dna-annotate
 
