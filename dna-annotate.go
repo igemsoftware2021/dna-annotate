@@ -1,10 +1,9 @@
 package main
 
-
 import (
 	"fmt"
 	"io/ioutil"
-    "log"
+	"log"
 	"regexp"
 	"os"
 	"strings"
@@ -30,9 +29,9 @@ var (
 
 
 var rootCmd = &cobra.Command{
-	Use:   "annotator",
-	Short: "Annotator is github action to annotate problematic sequences from given Genbank file.",
-	Long: `Annotator is github action to annotate problematic sequences from given Genbank file.`,
+	Use:   "dna-annotate",
+	Short: "A github action to annotate problematic sequences from a given Genbank file.",
+	Long:  "A github action to annotate problematic sequences from a given Genbank file.",
 	Run: func(cmd *cobra.Command, args []string) {
 		Script(input, output, pattern)
 	},
@@ -47,8 +46,8 @@ func Execute() {
 
 func init() {
 	rootCmd.PersistentFlags().StringVarP(&input, "input", "i", "", "Directory where all the input genbank files will be read")
-	rootCmd.PersistentFlags().StringVarP(&output, "ouput", "o", "", "Directory where all the output genbank files wil be written")
-	rootCmd.PersistentFlags().StringVarP(&pattern, "pattern", "p", "", "Regex to selective filter specific files in the input folder")
+	rootCmd.PersistentFlags().StringVarP(&output, "ouput", "o", "", "Directory where all the output genbank files will be written")
+	rootCmd.PersistentFlags().StringVarP(&pattern, "pattern", "p", "", "Regex to filter files in the input directory")
 
 
 	rootCmd.MarkFlagRequired("input")
@@ -115,7 +114,7 @@ func AvoidHairpin(stemSize int, hairpinWindow int) func(string) []finder.Match {
 			rest := reverse[len(sequence)-(i+hairpinWindow) : len(sequence)-(i+stemSize)]
 			if strings.Contains(rest, word) {
 				location := strings.Index(rest, word)
-				matches = append(matches, finder.Match{i, i + hairpinWindow - location - 1, "Harpin found in next " + strconv.Itoa(hairpinWindow) + "bp in reverse complementary sequence: " + word})
+				matches = append(matches, finder.Match{i, i + hairpinWindow - location - 1, "Hairpin found in next " + strconv.Itoa(hairpinWindow) + "bp in reverse complementary sequence: " + word})
 			}
 		}
 		return matches
@@ -123,7 +122,8 @@ func AvoidHairpin(stemSize int, hairpinWindow int) func(string) []finder.Match {
 }
 
 func homologySequencesFindProblems() []string {
-	// I don't have to worry about TTTTTT and GGGGGG because I already try to find also by reverse complementary of each sequence in finder
+	// I don't have to worry about TTTTTT and GGGGGG because I already
+	// try to find also by reverse complement of each sequence in finder
 	return []string{"AAAAAA", "CCCCCC"}
 }
 
