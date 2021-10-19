@@ -1,6 +1,6 @@
 <p align="center">
   <br>
-  <img src="friendzymes.svg" width="200" />
+  <img src="friendzymes.svg" width="300" />
   <!-- <img src="friendzymes-blah.png" width="150"/> -->
   <br>
 </p>
