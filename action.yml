@@ -1,17 +1,17 @@
 
 name: dna-annotate
-description: A Github action to annotate problematic sequences from given Genbank file.
+description: A github action to annotate problematic sequences from a given Genbank file.
 inputs:
     input-dir:  # id of input
-        description: 'Directory with all genbank to be read and annotated'
+        description: 'Directory where all the input genbank files will be read'
         required: true
         default: 'input'
     input-pattern:
-        description: 'User-specified pattern to select specific files from the input directory'
+        description: 'Regex to filter files in the input directory'
         required: true
         default: '.*\.\(gb\|gbk\)'
     output-dir:
-        description: 'Directory where all genbank annotated will be written'
+        description: 'Directory where all the output genbank files will be written'
         required: true
         default: 'output'
 runs:
