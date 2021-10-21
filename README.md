@@ -35,7 +35,7 @@ Every argument is required.
 
 #### input-dir
 
-This parameter is the path of the directory for your genbank files to read and annotate. You can use this parameters to setup different pipelines for different folders, so your project can be divided in folders with different processes. By default the action will use `input` as the input directory.
+This parameter is the path of the directory for your genbank files to read and annotate. You can use this parameter to setup different pipelines for different folders, so your project can be divided in folders with different processes. By default the action will use `input` as the input directory.
 
 Default: `input`
 
