@@ -8,9 +8,14 @@
 
 A Github action to annotate problematic sequences from given Genbank file.
 
-dna-annotate is a pretty great tool for low-attention readers like yourself who want the executive summary. This is executive-land, where all the C Suite execs live it up, only reading above the fold and never reading the fine print. Whee!
+dna-annotate is a Github Action that receives a path for a input directory, a regex pattern that should be used to filter genbank files or another interesing file name pattern, and an directory where the output will be written. This action will use all this information to annotate problematic parts of a given sequence. In this moment, annotate-dna Github action try find and annotate:
 
-This is the segue so you don't get scared when the detail comes in.
+- Repetition inside a sequence greater than 10 base pairs
+- Harpins
+- Homopolymers
+- Most common restriction binding sites
+
+If you have some feature that you think will make this action better, please, feel encouraged to comment in the Issue section.
 
 ## All options
 
@@ -28,15 +33,13 @@ Every argument is required.
 
 #### input-dir
 
-Phasellus ac felis auctor, molestie libero at, posuere tellus. Morbi interdum interdum viverra.
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+This parameter is the path of the directory for your genbank files to read and annotate. You could use this parameters to setup different pipelines for different folders, so your project could be divide in folders with different processes. Be default the action will use `input` as the input directory.
 
 Default: `input`
 
 #### input-pattern
 
-Phasellus ac felis auctor, molestie libero at, posuere tellus. Morbi interdum interdum viverra.
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+This paremeter is a regex pattern using [re2] syntax to filter files inside input directory parameter. So even inside a given input directory, you could select a specific file or group of files using a regex pattern. By default the action will use a regex pattern to select files with genbank extensions (`.gb` or `.gbk`).
 
 - mention that syntax is [re2]
 - regex tester
@@ -47,8 +50,7 @@ Default: `.*\.\(gb\|gbk\)`
 
 #### output-dir
 
-Phasellus ac felis auctor, molestie libero at, posuere tellus. Morbi interdum interdum viverra.
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+This parameter is the path of the directory for output processed sequences as genbank files. Be default the action will use `output` as the output directory.
 
 Default: `output`
 
@@ -57,7 +59,8 @@ Default: `output`
 Basic:
 
 ```yaml
-name: 'Some dummy YAML'
+- name: dna-annotate
+  uses: Open-Science-Global/dna-annotate@v0.6.1
 ```
 
 See [action.yml] for a comprehensive list of all the options.
