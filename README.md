@@ -43,9 +43,7 @@ Default: `input`
 
 This parameter is a regex pattern using [re2] syntax to filter files from within [input-dir]. So even inside a given input directory, you can select a specific file or group of files for the current job. By default the action will match files with genbank extensions (`.gb` or `.gbk`).
 
-- regex tester
-  - preload with relevant regexps
-  - preload with relevant test strings
+Example: [Match only BBF10k-prefixed files][input-pattern-example-1], freegene 10k gene project parts.
 
 Default: `.*\.\(gb\|gbk\)`
 
@@ -76,4 +74,5 @@ See [Friendzymes Cookbook] for further examples and sample data.
 [action.yml]:                 ./action.yml
 [input-dir]:                  #input-dir
 [input-pattern]:              #input-pattern
+[input-pattern-example-1]:    <https://regex101.com/library/eEz1xN>
 [output-dir]:                 #output-dir
